@@ -1,4 +1,4 @@
-# Stack implemented using a linked list
+# Linked list stack implementation
 
 ## Usage
 
