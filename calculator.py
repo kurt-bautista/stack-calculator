@@ -24,12 +24,17 @@ expression = input("Enter postfix expression: ").split()
 if not args.imperative:
     stack = Stack()
     for i in range(len(expression)):
-        if is_number(expression[i]):
-            stack.push(expression[i])
-        elif expression[i] in ['+', '-', '*', '/', '%', '**']:
-            op2 = stack.pop()
-            op1 = stack.pop()
-            stack.push(str(eval(op1 + expression[i] + op2)))
+        try:
+            if is_number(expression[i]):
+                stack.push(expression[i])
+            elif expression[i] in ['+', '-', '*', '/', '%', '**']:
+                op2 = stack.pop()
+                op1 = stack.pop()
+                stack.push(str(eval(op1 + expression[i] + op2)))
+            else:
+                sys.exit('Unrecognized operation')
+        except TypeError as e:
+            sys.exit('Invalid postfix expression')
     print(stack.pop())
 else:
     pass
