@@ -5,7 +5,7 @@
 * Kurt Vincent Bautista
 * Julio Carlos Tomas Ledesma
 
-Section B
+CS 112 - Section B
 
 ## Description
 
