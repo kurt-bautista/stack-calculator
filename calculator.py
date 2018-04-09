@@ -35,9 +35,11 @@ if not args.imperative:
                 stack.push(str(eval(op1 + expression[i] + op2)))
             else:
                 sys.exit('Unrecognized operation')
+        # Popped from an empty stack
         except TypeError:
             sys.exit('Invalid postfix expression')
     result = stack.pop()
+    # Postfix expression invalid if stack is not empty
     if stack.pop():
         sys.exit('Invalid postfix expression')
     print(result)
@@ -64,10 +66,12 @@ else:
                 top += 1
             else:
                 sys.exit('Unrecognized operation')
+        # Popped from an empty stack
         except TypeError:
             sys.exit('Invalid postfix expression')
     result = pop(stack, top)
     top -= 1
+    # Postfix expression invalid if stack is not empty
     if top != 0:
         sys.exit('Invalid postfix expression')
     print(result)
