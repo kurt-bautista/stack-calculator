@@ -5,9 +5,9 @@ def push(stack, top, item):
 
 def pop(stack, top):
     """Returns topmost item of stack"""
-    # Return False if stack is empty
+    # Return None if stack is empty
     if top == 0:
-        return False
+        return None
     item = stack[top - 1]
     stack[top - 1] = None
     return item

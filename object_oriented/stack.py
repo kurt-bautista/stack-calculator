@@ -21,8 +21,8 @@ class Stack(object):
     def pop(self):
         """Returns data at the top of stack"""
         node = self.linked_list
-        # Return False if stack is empty
+        # Return None if stack is empty
         if node.data is None and node.next_node is None:
-            return False
+            return None
         self.linked_list = self.linked_list.next_node
         return node.data
