@@ -45,10 +45,10 @@ if not args.imperative:
     print(result)
 else:
     print('Using imperative implementation of stack')
-    stackSize = len(expression)
-    stack = [None] * stackSize
+    stack_size = len(expression)
+    stack = [None] * stack_size
     top = 0
-    for i in range(stackSize):
+    for i in range(stack_size):
         try:
             if is_number(expression[i]):
                 push(stack, top, expression[i])
