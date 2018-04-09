@@ -1,6 +1,7 @@
 import sys
 import argparse
 from object_oriented.stack import Stack
+from imperative.stack import push, pop
 
 
 def is_number(str):
@@ -22,6 +23,7 @@ args = parser.parse_args(sys.argv[1:])
 expression = input("Enter postfix expression: ").split()
 
 if not args.imperative:
+    print('Using object-oriented implementation of stack')
     stack = Stack()
     for i in range(len(expression)):
         try:
@@ -33,8 +35,39 @@ if not args.imperative:
                 stack.push(str(eval(op1 + expression[i] + op2)))
             else:
                 sys.exit('Unrecognized operation')
-        except TypeError as e:
+        except TypeError:
             sys.exit('Invalid postfix expression')
-    print(stack.pop())
+    result = stack.pop()
+    if stack.pop():
+        sys.exit('Invalid postfix expression')
+    print(result)
 else:
-    pass
+    print('Using imperative implementation of stack')
+    stackSize = len(expression)
+    stack = [None] * stackSize
+    top = 0
+    for i in range(stackSize):
+        try:
+            if is_number(expression[i]):
+                push(stack, top, expression[i])
+                top += 1
+            elif expression[i] in ['+', '-', '*', '/', '%', '**']:
+                op2 = pop(stack, top)
+                if not op2:
+                    raise TypeError
+                top -= 1
+                op1 = pop(stack, top)
+                if not op1:
+                    raise TypeError
+                top -= 1
+                push(stack, top, str(eval(op1 + expression[i] + op2)))
+                top += 1
+            else:
+                sys.exit('Unrecognized operation')
+        except TypeError:
+            sys.exit('Invalid postfix expression')
+    result = pop(stack, top)
+    top -= 1
+    if top != 0:
+        sys.exit('Invalid postfix expression')
+    print(result)
