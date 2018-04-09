@@ -20,3 +20,5 @@ stack.push(x)
 ```python
 x = stack.pop()
 ```
+
+**Note:** Popping from an empty stack returns `None`
