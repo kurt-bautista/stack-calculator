@@ -1,0 +1,38 @@
+# Stack-based calculator
+
+## Authors
+
+* Kurt Vincent Bautista
+* Julio Carlos Tomas Ledesma
+
+Section B
+
+## Description
+
+This simple stack-based calculator uses either an array-based or a linked list stack in performing expression evaluation. Input expression should be in postfix notation. Python 3 is required to run this program.
+
+## Usage
+
+```bash
+$ python calculator.py
+Enter postfix expression: 1 2 +  # 1 + 2
+3  # Result
+```
+
+To use the imperative stack implementation, pass the optional `--imperative` flag
+
+```bash
+$ python calculator.py --imperative  # Or -i
+...
+```
+
+## Supported operations
+
+Operation | Symbol
+--------- | ------
+Addition | +
+Subtraction | -
+Multiplication | *
+Division | /
+Modulo | %
+Exponentiation | **
