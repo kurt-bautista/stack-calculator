@@ -2,7 +2,7 @@
 
 ## Usage
 
-### Instantiation
+### Creating the stack
 
 ```python
 stack = Stack()

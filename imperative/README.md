@@ -2,7 +2,7 @@
 
 ## Usage
 
-### Create the stack
+### Creating the stack
 
 ```python
 max_size = 100  # Can be any integer value
