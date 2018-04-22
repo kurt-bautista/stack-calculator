@@ -7,12 +7,20 @@ from imperative.stack import push, pop
 
 class CalculatorFactory(object):
     def get_calculator(self, implementation):
+        """
+        Returns either an ObjectOrientedCalculator or an
+        ImperativeCalculator object
+        """
+
         if implementation.lower() == 'imperative':
             return ImperativeCalculator()
         return ObjectOrientedCalculator()
 
 
 class AbstractCalculator(ABC):
+    """Calculator abstract class"""
+
+    # Required evaluate method that returns result of expression evaluation
     @abstractmethod
     def evaluate(self, expression):
         pass
@@ -94,6 +102,7 @@ def is_number(str):
 factory = CalculatorFactory()
 
 while True:
+    # Use object oriented or imperative calculator? Or exit program.
     command = input('OBJECTORIENTED, IMPERATIVE, QUIT ')
     if command.lower() == 'quit':
         break
