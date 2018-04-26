@@ -15,15 +15,9 @@ This simple stack-based calculator uses either an array-based or a linked list s
 
 ```bash
 $ python calculator.py
+OBJECTORIENTED, IMPERATIVE, QUIT: OBJECTORIENTED  # Create object-oriented calculator. Use IMPERATIVE for an imperative calculator. Enter quit to exit.
 Enter postfix expression: 1 2 +  # 1 + 2
 3  # Result
-```
-
-To use the imperative stack implementation, pass the optional `--imperative` flag
-
-```bash
-$ python calculator.py --imperative  # Or -i
-...
 ```
 
 ## Supported operations
